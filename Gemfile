@@ -51,6 +51,9 @@ end
 #   gem 'sqlite3'
 # end
 
+#use bootstrap library in styles
+gem 'bootstrap-sass' , '3.3.1'
+
 group :production do
   gem 'pg', '0.17.1'
   gem 'rails_12factor' , '0.0.2'
