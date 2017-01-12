@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Service</title>
+  <title>Dev Match</title> <!-- name of site-->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -25,7 +25,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'Site Name', root_path, class: 'navbar-brand' %>
+      
+      <%= link_to root_path,class:"navbar-brand" do %> <!-- wrap a ruby link around html and a text-->
+        <i class="fa fa-users"></i> <!-- fa fa-users is from front awesome ( icon)  navbar-brand helps to align it in navbar-->
+        Dev Match <!--name of site-->
+      <% end %> 
+      
     </div>
     <div class="collapse navbar-collapse" id="main-nav-collapse">
       <ul class="nav navbar-nav navbar-right">
