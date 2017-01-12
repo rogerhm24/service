@@ -1,3 +1,6 @@
+<!-- ANYTHING ADDED IN THIS PAGE AFFECTS THE ENTIRE SITE!!-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +35,10 @@
   </div>
 </nav>
 
+<div class ="container"> <!-- container class in bootstrap makes sure everthing is aligned properly-->
+  <%= yield %> <!--  outputs whichever specific page we are on eg. about page -->
+</div>
 
-<%= yield %>
 
 </body>
 </html>
