@@ -54,6 +54,10 @@ group :development do
   gem 'spring'
 end
 
+
+#install DEVISE ( user authentication)
+gem 'devise','3.4.1'
+
 # group :development do
 #   gem 'sqlite3'
 # end
