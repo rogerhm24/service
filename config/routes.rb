@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :contacts # shortcut to make diffrent routes for contsct.. eg contact page route
   get '/about' => 'pages#about'
   root 'pages#home'
