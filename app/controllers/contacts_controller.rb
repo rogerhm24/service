@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
         @contact = Contact.new(contact_parameters)
     
         if @contact.save
-            name = params[:contact][:name] #assiginng info to variable
+            name = params[:contact][:name] # HASH syntax (params) assiginng info to variable
             email = params[:contact][:email] #assiginng info to variable
             body = params[:contact][:comments] #assiginng info to variable
             
