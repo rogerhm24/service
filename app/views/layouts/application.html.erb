@@ -17,7 +17,7 @@
 
 <!--####app/views/layouts/application.html.erb-->
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation"> <!-- default or inverse changes look of bar-->
-  <div class='container'>
+  <div class='container-fluid'>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -42,6 +42,11 @@
 </nav>
 
 <div class ="container"> <!-- container class in bootstrap makes sure everthing is aligned properly-->
+
+  <% flash.each do|key,value| %> <!--if any flash messages (for loop)-->
+  <%= content_tag :div, value, class: "alert alert-#{key}" %> <!-- key is" Success or Error bootstarp code ( alert alert- success), value is the message to display-->
+  <% end %>
+  
   <%= yield %> <!--  outputs whichever specific page we are on eg. about page -->
 </div>
 
