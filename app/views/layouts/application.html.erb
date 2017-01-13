@@ -35,7 +35,8 @@
     <div class="collapse navbar-collapse" id="main-nav-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li> <!-- about_path is  our about path we created (rake routes) in console shows routes-->
-      </ul>
+        <li><%= link_to "Contact Us", new_contact_path %></li> <!-- new_contact_path is  our contact path we created in routes file  ,(console : bundle exec rake routes) in console shows routes-->
+      </ul>                                                   <!-- resources contact is just  rails packed code check (console : bundle exec rake routes) to see all contact paths-->
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
