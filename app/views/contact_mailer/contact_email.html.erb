@@ -5,9 +5,9 @@
     </head>
     <body>
         <!-- This is the email that will be sent to YOUR email from customer-->
-        <p> You have recieved a message from the sites contact, from <%= "#{@name},#{email}."%></p> <!-- inserting name and email of customer-->
+        <p> You have recieved a message from the sites contact, from <%= "#{ @name }, #{ @email }."%></p> <!-- inserting name and email of customer-->
         
-        <p> <%= @body %></p> <!-- inserting comments left by customer-->
+        <p> <%= "#{ @body }" %></p> <!-- inserting comments left by customer-->
         
     </body>    
     
