@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :contacts # shortcut to make diffrent routes for contsct.. eg contact page route
+  devise_for :users   # shortcut to make diffrent routes for user authentication ( login).. eg login route
+  resources :contacts # shortcut to make diffrent routes for contacts ( comments).. eg contact page route
   get '/about' => 'pages#about'
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
