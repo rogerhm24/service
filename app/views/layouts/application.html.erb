@@ -33,6 +33,16 @@
       
     </div>
     <div class="collapse navbar-collapse" id="main-nav-collapse">
+     <div class="nav navbar-nav navbar-right">
+       
+        <% if current_user %> <!-- if current user is logged in then, SIGN OUT button appears else SIGN UP AND LOG IN -->
+          <%= button_to "SIgn Out", destroy_user_session_path,method: :delete,class:'btn btn-primary navbar-btn'%>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path , class: 'btn btn-primary navbar-btn', method: :get %><!-- Login Button linked back to login page -->
+          <%= link_to "Sign Up", new_user_registration_path , class: 'btn btn-success navbar-btn', method: :get %><!-- Sign up Button linked back to Sign up page -->
+        <% end %>
+     </div>
+     
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li> <!-- about_path is  our about path we created (rake routes) in console shows routes-->
         <li><%= link_to "Contact Us", new_contact_path %></li> <!-- new_contact_path is  our contact path we created in routes file  ,(console : bundle exec rake routes) in console shows routes-->
