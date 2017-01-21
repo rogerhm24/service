@@ -2,3 +2,26 @@
  <h1>Welcome to Dev Match</h1>  
  <h3> A membership site where entrepreneurs can meet developers.</h3>
 </div>
+
+<div class = "row"><!-- as long as you use "row" it allows for columns to move around ur divs-->
+ 
+   <div clas ="col-md-6">
+    <div class = "well"> <!-- give the grey background "-->
+     <h2 class= "text-center">Basic Plan</h2>
+     <h5 class= "text-center"> Sign up for free and get basic acces to the community.</h5>
+    <%= link_to " Sign up for BASIC",new_user_registration_path, class: 'btn btn-primary btn-lg btn-block'%>
+    </div>
+   </div> 
+   
+   <div clas ="col-md-6">
+    <div class = "well"> <!-- give the grey background "-->
+     <h2 class="text-center">Premium Plan</h2>
+     <h5 class= "text-center"> Sign up for premium and get FULL access to the community at 10/monthly.</h5>
+     <%= link_to " Sign up for PREMIUM",new_user_registration_path, class: 'btn btn-success btn-lg btn-block'%>
+    </div> 
+   </div>
+  
+  
+
+
+</div>

@@ -17,7 +17,7 @@
 
 <!--####app/views/layouts/application.html.erb-->
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation"> <!-- default or inverse changes look of bar-->
-  <div class='container-fluid'>
+  <div class='container'>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -39,7 +39,7 @@
           <%= button_to "SIgn Out", destroy_user_session_path,method: :delete,class:'btn btn-primary navbar-btn'%>
         <% else %>
           <%= link_to "Log In", new_user_session_path , class: 'btn btn-primary navbar-btn', method: :get %><!-- Login Button linked back to login page -->
-          <%= link_to "Sign Up", new_user_registration_path , class: 'btn btn-success navbar-btn', method: :get %><!-- Sign up Button linked back to Sign up page -->
+          <!-- < %= link_to "Sign Up", new_user_registration_path , class: 'btn btn-success navbar-btn', method: :get %> ORIGINAL  Sign up Button THAT WAS IN NAVBAR linked back to Sign up page -->
         <% end %>
      </div>
      
