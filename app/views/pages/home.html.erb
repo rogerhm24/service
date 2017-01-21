@@ -9,16 +9,16 @@
     <div class = "well"> <!-- give the grey background "-->
      <h2 class= "text-center">Basic Plan</h2>
      <h5 class= "text-center"> Sign up for free and get basic acces to the community.</h5>
-    <%= link_to " Sign up for BASIC",new_user_registration_path, class: 'btn btn-primary btn-lg btn-block'%>
-    </div>
+    <%= link_to " Sign up for BASIC",new_user_registration_path(plan: @basic_plan.id) , class: 'btn btn-primary btn-lg btn-block'%>
+    </div>                           <!--#see page_contrller.rb(plan: @basic_plan.id) or Basic,1 is creating a diffrence betwen basic an pro page-->
    </div> 
    
    <div clas ="col-md-6">
     <div class = "well"> <!-- give the grey background "-->
      <h2 class="text-center">Premium Plan</h2>
      <h5 class= "text-center"> Sign up for premium and get FULL access to the community at 10/monthly.</h5>
-     <%= link_to " Sign up for PREMIUM",new_user_registration_path, class: 'btn btn-success btn-lg btn-block'%>
-    </div> 
+     <%= link_to " Sign up for PREMIUM",new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block'%>
+    </div>                              <!--#see page_contrller.rb(plan: @pro_plan.id) or Pro,2 is creating a diffrence betwen basic an pro page-->
    </div>
   
   
