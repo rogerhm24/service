@@ -1,5 +1,7 @@
-     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html:{id:"basic_form"}) do |f| %> <!-- BOTH SIGN UP FORMS ( BASIC/ PRO ) HAD THE SAME ID FOR FORM....CHNAING BASIC ID TO " BASIC_FORM " WITH HTML line 
           <%= devise_error_messages! %>
+          
+          <%= hidden_field_tag 'plan', params[:plan] %> <!-- CREATING A  HIDDEN TEXT FIELD to check wich plan ( 1 or 2 ) ( BASIC or  PRO )
         
           <div class="field form-group"><!-- chnage form style with bootstrap  (form-group)-->
             <%= f.label :email %><br />
