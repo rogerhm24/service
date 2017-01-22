@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  belongs_to :plan
+  belongs_to :plan #every user belongs to (one) plan
+  has_one :profile #evry user has one profile
   attr_accessor :stripe_card_token # use the hidden field to frome user.js file from teh token generated from stipe (series of letter an numbers ,instead of credit card)
   
   def save_with_payment
