@@ -9,10 +9,10 @@ class ProfilesController < ApplicationController
     @user = User.find( params[:user_id] )
     @profile = @user.build_profile(profile_params) # pass in the values of teh form fields getting stored in profile and he binding it to the user attahed ( user.biuld_profile)
     if @profile.save
-      flash[:success] = "Profile Updated!"
-      redirect_to user_path( params[:user_id] )
+      flash[:success] = "Profile Updated!" # alert a message 
+      redirect_to user_path( params[:user_id] ) # redirect page to the users actual page ,passing in the user ID to see which user
     else
-      render action: :new
+      render action: :new # if the profile doesnt save properly
     end
   end
     
