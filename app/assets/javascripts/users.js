@@ -1,4 +1,4 @@
-#app/assets/javascripts/users.js
+
 $(document).ready(function() { //Document. ready makes sure the document is loaded b4 code executes
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content')); // setting the stripe public key using stripe.js, so stripe know who we are.
   // Watch for a form submission:
