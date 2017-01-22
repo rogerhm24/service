@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
                       #updated route to add new route for users ( see/controller/users/ registartion_controller.rb)
   devise_for :users, controllers:{registrations: 'users/registrations'}   # shortcut to make diffrent routes for user authentication ( login).. eg login route
+  resources :users do  # nested route for user profile eg. user / profile ( user's profile)
+      resource :profile
+  end  
   resources :contacts # shortcut to make diffrent routes for contacts ( comments).. eg contact page route
   get '/about' => 'pages#about'
   root 'pages#home'
