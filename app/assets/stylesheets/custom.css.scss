@@ -3,6 +3,12 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.alert-notice{ //overtighting user login success css from devise ,any class iwh alert-notice will change
+    color:#8a6d3b;
+    background-color:#fcf8e3;
+    border-color:#faebcc;
+}
+
 // // changing code by using class or name of property eg body
 // body{ 
 //  // Gradient from uiGradient
