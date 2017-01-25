@@ -1,4 +1,4 @@
-<%= link_to "Create your profile!", new_user_profile_path(current_user) if current_user %> <!-- new_user_profile_path is a route generated from neste route ( user, routes.rb) teh route is a template an if filled in based on whch user is currently logged in ( will generate roger's profile, in template )-->
+
 
 <div class="jumbotron text-center "> <!-- jumbotron is a header default from bootrap ,text-center centers text-->
  <h1>Welcome to Dev Match</h1>  
@@ -6,7 +6,34 @@
 </div>
 
 <div class = "row"><!-- as long as you use "row" it allows for columns to move around ur divs-->
- 
+   <% if user_signed_in? %> <!-- if the user is signed in -->
+   
+    <div class="col-md-6">
+      <div class = "well">
+      <%#Show profile links %> 
+      <h1 class = " text-center" > Your Profile </h1>
+       <% if current_user.profile %> <!-- if current user is signed in and has a profile -->
+         <%#link to edit user profile %> 
+         <%= link_to "Edit your Profile" , "#", class: 'btn btn-primary btn-lg btn-block' %> <!-- Link to edit profile if user is signed in -->
+         <%= link_to "View your Profile" , user_path(current_user),class: 'btn btn-primary btn-lg btn-block' %> <!-- Link to user profile if user is signed in -->
+       <% else %>
+         <%= link_to "Create your profile!", new_user_profile_path(current_user),class: 'btn btn-primary btn-lg btn-block' %> <!-- new_user_profile_path is a route generated from neste route ( user, routes.rb) teh route is a template an if filled in based on whch user is currently logged in ( will generate roger's profile, in template )-->
+       <% end %>
+     </div>
+    </div>
+    
+    <div class="col-md-6"> <!--- Cmmmunity Profile on the right -->
+       <div class = "well">
+       
+        <h1 class = " text-center" > The Community</h1>
+        <p class = "text-center"> Visit the community to meet new developers , and investors</p>
+        <%= link_to "Vist the Community" , "#",class: 'btn btn-primary btn-lg btn-block' %> <!--  Visit Community link if user is signed in -->
+       </div>
+    </div>       
+    
+    
+    
+  <% else %> <!-- show buttons for sign up basic and pro-->
    <div clas ="col-md-6">
     <div class = "well"> <!-- give the grey background "-->
      <h2 class= "text-center">Basic Plan</h2>
@@ -22,7 +49,8 @@
      <%= link_to " Sign up for PREMIUM",new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block'%>
     </div>                              <!--#see page_contrller.rb(plan: @pro_plan.id) or Pro,2 is creating a diffrence betwen basic an pro page-->
    </div>
-  
+   
+  <% end %>
   
 
 
