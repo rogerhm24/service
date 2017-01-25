@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   def new
     # form where a user can fill out the OWN profile ,noone else should b able to  go to this user's new profile 
     @user = User.find( params[:user_id] ) # reach in Users database to dertermine who is logged in
-    @profile = @user.build_profile # because we have ( the nested resource in #routes.rb) we van use "biuld.profile" on @user EVRY USER TO HAV THIER OWN PROFILE
+    @profile = Profile.new #( linking profiel and user)#@user.build_profile # because we have ( the nested resource in #routes.rb) we van use "biuld.profile" on @user EVRY USER TO HAV THIER OWN PROFILE
   end
   
   def create #
@@ -23,5 +23,10 @@ class ProfilesController < ApplicationController
   
 end
 
+def edit
+   @user = User.find( params[:user_id] ) # call the ID of uder
+   @profile = @user.profile # pulling up the info of the profil uder
+  
+end
 
 
