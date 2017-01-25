@@ -14,9 +14,11 @@
       <h1 class = " text-center" > Your Profile </h1>
        <% if current_user.profile %> <!-- if current user is signed in and has a profile -->
          <%#link to edit user profile %> 
+         <p class = "text-center"> Edit / View </p>
          <%= link_to "Edit your Profile" , "#", class: 'btn btn-primary btn-lg btn-block' %> <!-- Link to edit profile if user is signed in -->
          <%= link_to "View your Profile" , user_path(current_user),class: 'btn btn-primary btn-lg btn-block' %> <!-- Link to user profile if user is signed in -->
        <% else %>
+         <p class = "text-center"> Create your very own user profile and be apart of teh community</p>
          <%= link_to "Create your profile!", new_user_profile_path(current_user),class: 'btn btn-primary btn-lg btn-block' %> <!-- new_user_profile_path is a route generated from neste route ( user, routes.rb) teh route is a template an if filled in based on whch user is currently logged in ( will generate roger's profile, in template )-->
        <% end %>
      </div>
