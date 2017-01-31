@@ -74,3 +74,7 @@ gem 'stripe','1.16.1'
 
 #install FIGARO ( HIDE SECRET KEYS)
 gem 'figaro', '1.0.0'
+
+# Use paperclip for image uploads
+
+gem 'paperclip','4.2.1'
