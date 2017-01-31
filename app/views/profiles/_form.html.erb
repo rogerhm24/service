@@ -1,4 +1,5 @@
-<%= form_for :profile, url: user_profile_path do |f| %> <!-- Form , going to the profile that matches teh user ID whenerver using singular profiles..have to add URL--> 
+<%= form_for :profile, url: user_profile_path, :html => {:multipart => true } do |f| %> <!-- Form , going to the profile that matches teh user ID whenerver using singular profiles..have to add URL--> 
+                                          <!-- :html => {:multipart => true } is needed from paperclip gem to add form field to collect pictures for profile -->
     <div class="form-group"> <!-- bootstrap class-->
       <%= f.label :first_name %>
       <%= f.text_field :first_name, class: 'form-control' %>
@@ -6,6 +7,10 @@
     <div class="form-group">
       <%= f.label :last_name %>
       <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+     <div class="form-group">
+      <%= f.label :avatar %> <!-- avatar ( profile picture ) beacuse that what we named it in database -->
+      <%= f.file_field :avatar, class: 'form-control' %> <!-- file field to upload files -->
     </div>
     <div class="form-group">
       <%= f.label :job_title %>
